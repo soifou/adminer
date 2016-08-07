@@ -398,8 +398,17 @@ p#dbs {
 }
 
 .pages {
-    left: 21.5em;
+    color: #fff;
+    background: #34495e;
+    border: 1px solid #5c85af;
+    padding: 5px 20px;
 }
+.pages a {
+    font-weight: bold;
+    color: white;
+}
+
+span > a.select-text { font-weight: bold; }
 
 #logins a, #tables a, #tables span {
     background: none;
