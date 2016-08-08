@@ -43,7 +43,9 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')){
 	        // new AdminerLoginTable(),
 	        // new AdminerMasterSlave(),
 	        new AdminerSlugify(),
-	        new AdminerSqlLog(),
+	        new AdminerSqlLog(
+                "sql" // folder where to store sql files
+            ),
 	        // new AdminerTablesFilter(),
 	        // new AdminerTinymce(),
 	        // new AdminerTranslation(),

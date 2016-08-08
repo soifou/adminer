@@ -9,19 +9,24 @@
 class AdminerSqlLog {
 	/** @access protected */
 	var $filename;
-	
+	var $folder;
+
 	/**
 	* @param string defaults to "$database.sql"
 	*/
-	function __construct($filename = "") {
-		$this->filename = $filename;
+	function __construct($folder = "", $filename = "") {
+		$this->folder = $folder;
+        $this->filename = $filename;
 	}
-	
+
 	function messageQuery($query, $time) {
-		if ($this->filename == "") {
+        if ($this->filename == "") {
 			$adminer = adminer();
 			$this->filename = $adminer->database() . ".sql"; // no database goes to ".sql" to avoid collisions
 		}
+        if ($this->folder != "")
+            $this->filename = $this->folder . "/" . $this->filename;
+
 		$fp = fopen($this->filename, "a");
 		flock($fp, LOCK_EX);
 		fwrite($fp, $query);
@@ -29,5 +34,5 @@ class AdminerSqlLog {
 		flock($fp, LOCK_UN);
 		fclose($fp);
 	}
-	
+
 }
