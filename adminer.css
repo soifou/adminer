@@ -93,7 +93,8 @@ fieldset {
 	border-radius: 4px;
 }
 
-input{
+input,
+textarea{
     padding: 5px 12px;
     font-size: 14px;
     line-height: 1.42857143;
@@ -131,15 +132,19 @@ input[type=submit] {
   /* DELETE WHEN WIDTH AUTO */
 }
 
+textarea{
+    min-height: 80px;
+}
+
 select{
 	padding:7px 4px;
 	background-color:#FFFFFF;
-    min-width: 100px;
+    min-width: 150px;
 }
 
 input[type=submit]:hover{
 	background: none repeat scroll 0 0 #999999;
-  color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 input[type=checkbox]{
@@ -157,6 +162,7 @@ input[type=image] {
 input[type=checkbox],input[type=radio]{
 	border:1px solid #e5e5e5;
 	padding:2px 5px;
+    margin: 7px 3px 7px 11px;
 }
 
 code{
