@@ -16,6 +16,9 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')){
 	        include_once "./$filename";
 	    }
 
+        // load custom DB servers
+        include_once "./private/servers.php";
+
 	    $plugins = array(
 	        // new AdminerCheckboxSelect(),
 	        // new AdminerDatabaseHide(),
@@ -37,7 +40,7 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')){
 	        new AdminerJsonColumn(),
 	        new AdminerLinksDirect(),
 	        new AdminerLoginServers(
-                array('db')
+                DBServers::$servers // get all your private servers list (see private/servers.php.dist)
             ),
             new AdminerSelect2(),
 	        // new AdminerLoginTable(),

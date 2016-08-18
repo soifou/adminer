@@ -1,0 +1,24 @@
+<?php
+
+/**
+* DIST FILE: DO NOT EDIT
+* ======================================
+* List here all your private DB server
+* ======================================
+* Create a PHP file servers.php inside this directory (directory) with this content
+* Adapt to add some of your local/remote DB servers like examples below
+*/
+class DbServers
+{
+    public static $servers = array(
+        'MySQL' => array(
+            // ip or hostname => description
+            'db' => 'localhost',
+            // add remote server if u need
+            '127.0.0.1' => 'my remote server'
+        ),
+        'Oracle' => array(
+            'dbOracle' => 'localhost'
+        )
+    );
+}

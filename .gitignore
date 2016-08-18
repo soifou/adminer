@@ -1,2 +1,5 @@
 sql/
 !sql/.gitkeep
+
+private/*
+!private/servers.php.dist
