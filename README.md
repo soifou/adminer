@@ -1,54 +1,27 @@
-Adminer With Theme
+Custom Adminer
 =====================
 
-Current Adminer versionL 4.2.4
+Latest [Adminer][1] with a custom theme and some plugins according to my current taste. This project is a fork from [@hmphu][2].
 
-Adminer css theme for the best php+mysql admin. Here's what it looks like:
+## 
+* Nice custom theme
+* My own and useful(less?) plugins ; select2
+* Filters for databases, tables and selects.
+* SQL commands logged into files per databases (in `sql/`)
+* 
 
-<img src="https://raw.githubusercontent.com/hmphu/adminer/master/screenshot.png" width="650px" />
 
-### Installed Plugins
-- Adminer Dump Alter,
-- Adminer Dump Bz2,
-- Adminer Dump Date,
-- Adminer Dump Json,
-- Adminer Dump Php,
-- Adminer Dump Xml,
-- Adminer Dump Zip,
-- Adminer Edit Foreign,
-- Adminer Edit Textarea,
-- Adminer Email Table,
-- Adminer Enum Option,
-- Adminer File Upload
-- Adminer Foreign System,
-- Adminer Frames,
-- Adminer Json Column,
-- Adminer Links Direct,
-- Adminer Slugify,
-- Adminer Sql Log,
-- Adminer Translation,
-- Adminer Version Noverify,
-- Adminer Restore Menu Scroll,
-- Adminer Tables History,
-- Faster Tables Filter,
+## Installation
+```
+git clone https://github.com/soifou/adminer
+wget https://www.adminer.org/latest-mysql-en.php -O adminer/adminer.php
+cp adminer/private/servers.php.dist adminer/private/servers.php
+```
 
-### Installation
-Copy adminer.css to the folder where adminer.php is located. Voila.
+Adapt the DB servers in `servers.php` to suit your need.
+Then run the `index.php` in your browser.
 
-### Updating Adminer
 
-To update adminer, download the latest version of adminer.php from [adminer.org][1] The css can be used without modification for future releases of adminer.
 
-#### Credit
-The theme was a revision from the [Lukáš Brandejs][2] 
-
-###  Support or Contact
-Having trouble? [contact me][3]
-
-In 2016, PhuHM ([@hmphu][4]), [http://hmphu.com][5]
-
-[1]: http://www.adminer.org
-[2]: https://raw.githubusercontent.com/vrana/adminer/master/designs/ng9/adminer.css
-[3]: mailto:me@hmphu.com
-[4]: https://github.com/hmphu
-[5]: http://www.hnphu.com
+[1]: https://www.adminer.org/
+[2]: https://github.com/hmphu/adminer
