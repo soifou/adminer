@@ -44,7 +44,8 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins'))
             ),
             new AdminerSelect2(),
 	        // new AdminerLoginTable(),
-	        // new AdminerMasterSlave(),
+			// new AdminerMasterSlave(),
+			new AdminerReadableDates(),
 	        new AdminerSlugify(),
 	        new AdminerSqlLog(
                 "sql" // folder where to store sql files
