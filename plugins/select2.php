@@ -4,10 +4,10 @@ class AdminerSelect2
 {
     function head() {
     ?>
-<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<script>
+<link<?php echo nonce() ?> href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script<?php echo nonce() ?> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script<?php echo nonce() ?> src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script<?php echo nonce() ?>>
 jQuery(document).ready(function($) {
     initSelect2();
     jQuery('legend a').on('click', function(e) {

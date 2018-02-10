@@ -11,11 +11,11 @@ class AdminerRestoreMenuScroll {
 	/**
 	* @param string text to append before first calendar usage
 	*/
-	public function __construct($script = "<script type='text/javascript'>\n(function(){\nvar executed = false;\nvar saveAndRestore = function() {\nif( executed ) {\nreturn;\n}\n
+	public function __construct($script = "<script>\n(function(){\nvar executed = false;\nvar saveAndRestore = function() {\nif( executed ) {\nreturn;\n}\n
 executed = true;\nvar menu = document.getElementById('menu');\nvar scrolled = localStorage.getItem('_adminerScrolled');\nif( scrolled && scrolled >= 0 ) {\nmenu.scrollTop = scrolled;\n}\n
 window.addEventListener('unload', function(){\nlocalStorage.setItem('_adminerScrolled', menu.scrollTop);\n});\n};\ndocument.addEventListener && document.addEventListener('DOMContentLoaded', saveAndRestore);\ndocument.attachEvent && document.attachEvent('onreadystatechange', saveAndRestore);\n})();\n</script>")
 	{
-		$this->script = $script;
+		$this->script = str_replace('script>', 'script' . nonce().'>', $script);
 	}
 
 	public function head()
