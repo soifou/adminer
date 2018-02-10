@@ -15,7 +15,7 @@ https://raw.github.com/vrana/adminer/master/designs/ng9/adminer.css
 
 body{
     font: 14px/1.7 "Roboto","Source Sans Pro","Droid Sans",Arial,Helvetica, sans-serif;
-    background-image: url('adminer-bg.png');
+    background: #f2f3f3;
 }
 
 a, a:visited {
@@ -246,6 +246,10 @@ tr.odd td {
 	color:#090
 }
 
+.footer {
+	background: #f2f3f3;
+}
+
 #content{
 	margin:0px 0px 0px 320px;
 	padding:50px 20px 40px 0px;
@@ -428,13 +432,15 @@ span > a.select-text { font-weight: bold; }
 
 /* customize the scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+	/* width: 12px; */
+    width: 0px;  /* remove scrollbar space */
+    background: transparent; /* optional: just make scrollbar invisible */
 }
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
+} */
