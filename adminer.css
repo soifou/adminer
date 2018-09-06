@@ -6,7 +6,7 @@ https://raw.github.com/vrana/adminer/master/designs/ng9/adminer.css
 */
 
 @import url(//fonts.googleapis.com/css?family=Roboto:400,700);
-
+@import url(//cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css);
 
 * {
 	margin:0px;
@@ -14,7 +14,7 @@ https://raw.github.com/vrana/adminer/master/designs/ng9/adminer.css
 }
 
 body{
-    font: 14px/1.7 "Roboto","Source Sans Pro","Droid Sans",Arial,Helvetica, sans-serif;
+    font: 14px/1.7 "Roboto", "Droid Sans", Arial, Helvetica, sans-serif;
     background: #f2f3f3;
 }
 
@@ -51,7 +51,7 @@ pre.sqlarea{
 	background: white;
 }
 pre.sqlarea span,pre.sqlarea span{
-	font-family: Inconsolata;
+	font-family:  "Fira Code", sans-serif;
 	font-size: 18px;
 }
 
