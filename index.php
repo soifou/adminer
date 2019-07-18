@@ -42,7 +42,8 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins'))
 	        new AdminerLoginServers(
                 $servers // get all your private servers list (see private/servers.php.dist)
             ),
-            new AdminerSelect2(),
+            // new AdminerSelect2(),
+            new AdminerPerfectScrollbar(),
 	        // new AdminerLoginTable(),
 			// new AdminerMasterSlave(),
 			new AdminerReadableDates(),
