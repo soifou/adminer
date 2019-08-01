@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 			tds[i].newDate = date.toLocaleString();	// Local format
 			// tds[i].newDate = date.toLocaleFormat('%e %b %Y %H:%M:%S'); // Custom format - works in Firefox only
 
-			tds[i].newDate = '<span style="color: #009900">' + tds[i].newDate + '</span>';
+			tds[i].newDate = '<span class="readable-date">' + tds[i].newDate + '</span>';
 			tds[i].innerHTML = tds[i].newDate;
 			tds[i].dateIsNew = true;
 

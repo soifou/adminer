@@ -882,3 +882,17 @@ form p label {
     margin: 0 0 20px 0;
     width: 100%;
 }
+
+#table tr td > i {
+    color: #000;
+    background: #5df1dc;
+    padding: 2px 5px;
+    transition: background .4s ease;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    line-height: 42px;
+}
+
+span.readable-date {
+    color: #bf824a;
+}
