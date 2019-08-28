@@ -253,7 +253,7 @@ p code + a:visited:hover {
 
 #menu {
     width: 370px;
-    border-right: 1px solid #2a2838;
+    border-right: 2px solid #2a2838;
     margin: 0;
     top: 0;
     background: rgb(46, 44, 62);
@@ -291,14 +291,9 @@ p code + a:visited:hover {
 }
 
 #menu #dbs {
-    padding: 0 10px 15px;
     border-bottom: 0;
     box-sizing: border-box;
     color: transparent;
-}
-
-#menu #dbs span {
-    visibility: hidden;
 }
 
 #menu #dbs select {
@@ -308,13 +303,8 @@ p code + a:visited:hover {
 }
 
 #menu p.links {
-    margin: 0 0 15px;
-    border-top: 0;
-    text-align: center;
-    display: table;
-    width: 100%;
-    box-sizing: border-box;
-    border-bottom: 1px solid #2a2838;
+    border-bottom: 2px solid #2a2838;
+    margin: 15px 0 0;
 }
 
 #menu p.links a {
@@ -373,6 +363,7 @@ p code + a:visited:hover {
     display: flex;
     flex-direction: column;
     max-height: 73%;
+    padding: .8em .8em;
     /*margin: 0 -15px !important;*/
     /*overflow: hidden !important;*/
     /*overflow-y: auto !important;*/
@@ -413,17 +404,13 @@ p code + a:visited:hover {
     overflow-y: auto !important;
 }
 
-#tables a {
-    padding: 6px 4px;
-}
-
 .rtl #tables a {
     float: none;
 }
 
 #tables a[title] {
     float: none;
-    display: block;
+    display: initial;
 }
 
 .rtl #tables a:first-child,
@@ -879,7 +866,7 @@ form p label {
 }
 
 #filter-field {
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     width: 100%;
 }
 
@@ -895,4 +882,38 @@ form p label {
 
 span.readable-date {
     color: #bf824a;
+}
+
+/* Select2 tweaks */
+.select2-container--default .select2-selection--single {
+    border-radius: 2px;
+    border: none;
+    background: #0000001a !important;
+    color: #fff3;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff;
+}
+.select2-results {
+    background: #2e2c3e;
+}
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: #5df1dc;
+    color: #000;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #5df1dc;
+    color: #000;
+}
+.select2-dropdown {
+    background-color: #2e2c3e;
+    border: 1px solid #343245;
+    border-radius: 0;
+}
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 39px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 39px;
 }
