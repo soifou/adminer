@@ -9,14 +9,14 @@
 class AdminerPlugin extends Adminer {
 	/** @access protected */
 	var $plugins;
-	
+
 	function _findRootClass($class) { // is_subclass_of(string, string) is available since PHP 5.0.3
 		do {
 			$return = $class;
 		} while ($class = get_parent_class($class));
 		return $return;
 	}
-	
+
 	/** Register plugins
 	* @param array object instances or null to register all classes starting by 'Adminer'
 	*/
@@ -32,11 +32,11 @@ class AdminerPlugin extends Adminer {
 		$this->plugins = $plugins;
 		//! it is possible to use ReflectionObject to find out which plugins defines which methods at once
 	}
-	
+
 	function _callParent($function, $args) {
 		return call_user_func_array(array('parent', $function), $args);
 	}
-	
+
 	function _applyPlugin($function, $args) {
 		foreach ($this->plugins as $plugin) {
 			if (method_exists($plugin, $function)) {
@@ -51,13 +51,15 @@ class AdminerPlugin extends Adminer {
 					default: trigger_error('Too many parameters.', E_USER_WARNING);
 				}
 				if ($return !== null) {
+                    // var_dump($return);
+                    // die();
 					return $return;
 				}
 			}
 		}
 		return $this->_callParent($function, $args);
 	}
-	
+
 	function _appendPlugin($function, $args) {
 		$return = $this->_callParent($function, $args);
 		foreach ($this->plugins as $plugin) {
@@ -67,14 +69,14 @@ class AdminerPlugin extends Adminer {
 		}
 		return $return;
 	}
-	
+
 	// appendPlugin
-	
+
 	function dumpFormat() {
 		$args = func_get_args();
 		return $this->_appendPlugin(__FUNCTION__, $args);
 	}
-	
+
 	function dumpOutput() {
 		$args = func_get_args();
 		return $this->_appendPlugin(__FUNCTION__, $args);
@@ -86,7 +88,7 @@ class AdminerPlugin extends Adminer {
 	}
 
 	// applyPlugin
-	
+
 	function name() {
 		$args = func_get_args();
 		return $this->_applyPlugin(__FUNCTION__, $args);

@@ -6,6 +6,7 @@
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
 body {
@@ -303,7 +304,7 @@ p code + a:visited:hover {
 }
 
 #menu p.links {
-    border-bottom: 2px solid #2a2838;
+    /* border-bottom: 2px solid #2a2838; */
     margin: 15px 0 0;
 }
 
@@ -868,6 +869,7 @@ form p label {
 #filter-field {
     margin: 0 0 15px 0;
     width: 100%;
+    background: #2a2838;
 }
 
 #table tr td > i {

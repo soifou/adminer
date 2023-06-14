@@ -3,7 +3,11 @@ init: upgrade ## Init project
 	cp private/servers.php.dist private/servers.php
 
 upgrade: ## Upgrade adminer to latest version
-	curl -L https://www.adminer.org/latest-mysql-en.php > adminer.php
+	curl -L https://www.adminer.org/latest-en.php > adminer.php
+	#
+	# Latest Adminer has issue while querying in a SQLite databse with PHP8.
+	# This fork fix theses issues
+	# curl -L https://github.com/bayrell-os/adminer/releases/download/4.8.2-fix/adminer-4.8.2-fix.php > adminer.php
 
 .PHONY: init upgrade
 

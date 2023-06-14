@@ -22,7 +22,7 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins'))
 	    $plugins = array(
 	        // new AdminerCheckboxSelect(),
 	        // new AdminerDatabaseHide(),
-	        new AdminerDumpAlter(),
+	        // new AdminerDumpAlter(),
 	        new AdminerDumpBz2(),
 	        new AdminerDumpDate(),
 	        new AdminerDumpJson(),
@@ -39,9 +39,9 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins'))
 	        // new AdminerFrames(),
 	        new AdminerJsonColumn(),
 	        new AdminerLinksDirect(),
-	        new AdminerLoginServers(
-                $servers // get all your private servers list (see private/servers.php.dist)
-            ),
+            // new AdminerLoginServers(
+            //     $servers // get all your private servers list (see private/servers.php.dist)
+            // ),
             new AdminerSelect2(),
             new AdminerPerfectScrollbar(),
 	        // new AdminerLoginTable(),
@@ -50,6 +50,13 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins'))
 	        new AdminerSlugify(),
 	        new AdminerSqlLog(
                 "sql" // folder where to store sql files
+            ),
+            // Some database system does not support password (ie. sqlite),
+            // However, Adminer 4.6.3 and newer does not support accessing a database without a password.
+            // See: https://www.adminer.org/en/password/
+            // For this kind of system, login with credentials: root / fake
+            new AdminerLoginPasswordLess(
+                password_hash("fake", PASSWORD_DEFAULT)
             ),
             // new AdminerTableStructure(),
 	        // new AdminerTablesFilter(),
