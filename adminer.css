@@ -31,12 +31,11 @@ h1 {
 }
 
 h2 {
-    margin: 0 0 40px;
+    margin: 10px 0;
     padding: 0 0 6px;
     background: none;
     border: 0;
-    font-size: 46px;
-    font-weight: normal;
+    font-size: 25px;
     color: #fff;
 }
 
@@ -85,8 +84,8 @@ table {
 
 th, td {
     border: 0;
-    padding: 16px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 14px;
     color: rgb(255, 255, 255);
 }
 
@@ -214,10 +213,11 @@ code {
 p code,
 pre code,
 pre[contenteditable=true] {
-    padding: 10px 15px;
+    padding: 10px 5px;
     display: block;
     font-size: 17px;
     margin-bottom: 15px;
+    background: #292838;
 }
 
 p code + a,
@@ -233,8 +233,7 @@ p code + a:visited:hover {
 }
 
 #content {
-    margin: 0 54px 0 430px;
-    padding: 50px 0 0;
+    padding: 20px 85px 0;
 
 }
 
@@ -260,7 +259,7 @@ p code + a:visited:hover {
     background: rgb(46, 44, 62);
     bottom: 0;
     position: fixed;
-    padding: 0 30px;
+    padding: 0 15px;
     box-sizing: border-box;
 }
 
@@ -269,8 +268,8 @@ p code + a:visited:hover {
     line-height: 50px;
     padding-left: 50px;
     padding-top: 9px;
-    text-transform: lowercase;
     margin: 25px 0 10px 16px;
+    border-top: none;
 }
 
 #menu h1 a {
@@ -311,7 +310,7 @@ p code + a:visited:hover {
 #menu p.links a {
     padding: 8px;
     margin: 0;
-    display: table-cell;
+    display: inline;
     font-size: 12px;
     color: rgb(143, 195, 247);
 }
@@ -325,14 +324,10 @@ p code + a:visited:hover {
     color: #fff;
 }
 
-#content p.links {
-    margin: -10px 0 15px -16px;
-}
-
 #content p.links a {
-    padding: 16px;
+    padding: 5px;
     margin: 0;
-    display: table-cell;
+    display: inline;
 }
 
 #content p.links a:last-child {
@@ -461,10 +456,11 @@ p code + a:visited:hover {
 
 #breadcrumb {
     margin: 0;
-    left: 430px;
-    background: none;
-    padding: 25px 0 0;
     font-size: 12px;
+    padding: 10px 136px;
+    width: 100%;
+    background: #2e2c3e;
+    border-bottom: 2px solid #2a2838;
 }
 
 #breadcrumb a {
@@ -485,8 +481,6 @@ p code + a:visited:hover {
 
 .logout,
 .rtl .logout {
-    top: 30px;
-    right: 54px;
     margin: 0;
 }
 
@@ -716,10 +710,10 @@ form p label {
 
 #lang {
     position: fixed;
-    top: 55px;
+    top: 42px;
     right: 100%;
     z-index: 10;
-    margin-right: -380px;
+    margin-right: -355px;
     line-height: normal;
     padding: 0;
     left: auto;
@@ -817,9 +811,8 @@ form p label {
 }
 
 .jush-sql + .time {
-    padding-left: 20px;
     color: rgba(255, 255, 255, 0.45);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .jush-sql + .time + a {
@@ -885,6 +878,7 @@ form p label {
 span.readable-date {
     color: #bf824a;
 }
+span.separator { margin: 0; }
 
 /* Select2 tweaks */
 .select2-container--default .select2-selection--single {
