@@ -1,5 +1,6 @@
 .SILENT:
 .DEFAULT_GOAL := help
+ADMINEREVO_VERSION=4.8.3
 
 .PHONY: init
 init: install ## Init project
@@ -7,7 +8,9 @@ init: install ## Init project
 
 .PHONY: install
 install: ## Upgrade adminer to latest version
-	curl -L https://github.com/adminerevo/adminerevo/releases/download/v4.8.3/adminer-4.8.3.php > adminer.php
+	curl -L https://github.com/adminerevo/adminerevo/releases/download/v$(ADMINEREVO_VERSION)/adminer-$(ADMINEREVO_VERSION).php > adminer.php
+	# HACK: Suppress annoying warnings with PHP 8.3
+	sed -i '1a ini_set("display_errors", "0");' adminer.php
 
 .PHONY: help
 help: ## Show this help

@@ -1,24 +1,30 @@
 <?php
 
 /**
-* DIST FILE: DO NOT EDIT
-* ======================================
-* List here all your private DB server
-* ======================================
-* Create a PHP file servers.php inside this directory (directory) with this content
+* List here all your private DB servers.
+*
+* Create a PHP file servers.php inside this directory with this content.
 * Adapt to add some of your local/remote DB servers like examples below
 */
 class DbServers
 {
     public static $servers = array(
-        'MySQL' => array(
+        'sqlite' => [
+            'server' => '/app/foo/bar/var/cache/test/test.db',
+            'driver' => 'sqlite',
+        ],
+        'mysql' => [
             // ip or hostname => description
-            'db' => 'localhost',
-            // add remote server if u need
-            '127.0.0.1' => 'my remote server'
-        ),
-        'Oracle' => array(
-            'dbOracle' => 'localhost'
-        )
+            'db:3306' => 'localhost',
+            // remote server
+            '127.0.0.1' => 'my remote server',
+            'foo.bar.baz' => 'project_1',
+        ],
+        'mongodb' => [
+            'mongodb:27017' => 'mongodb/localhost'
+        ],
+        'postgresql' => [
+            'postgres:5432' => 'postgres/localhost',
+        ],
     );
 }

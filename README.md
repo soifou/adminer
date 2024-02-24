@@ -1,34 +1,27 @@
 # Custom Adminer
 
-Latest [Adminer][1] with a [custom theme][2] and some plugins according to my current taste.
-This project is initially a fork from [@hmphu][3].
+[Adminer][1] with some plugins according to my current taste. This project is
+initially a fork from [@hmphu][2].
 
 ## Overview
 
-- Nice dark custom theme
-- My own and useful(less?) plugins ; select2, perfectscrollbar
 - Filters for databases, tables and selects.
 - SQL commands logged into files per databases (in `sql/`)
+- My own and useful(less?) plugins ; select2, perfectscrollbar
 
 ## Installation
 
 ```sh
-$ make init
+make init
 ```
 
 ## Configuration
 
-Adapt the DB servers in `private/servers.php` to suit your need.
-Then run the `index.php` in your browser.
+1. Adapt the database servers in `private/servers.php` to suit your need. See
+   `private/servers.php.dist`
+2. Run `index.php` in your browser.
 
-## Update
+---
 
-In case of new release, update adminer:
-
-```sh
-$ make upgrade
-```
-
-[1]: https://www.adminer.org/
-[2]: https://github.com/pepa-linha/Adminer-Design-Dark
-[3]: https://github.com/hmphu/adminer
+[1]: https://github.com/adminerevo/adminerevo
+[2]: https://github.com/hmphu/adminer
