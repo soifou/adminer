@@ -72,6 +72,9 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')) {
             new AdminerRestoreMenuScroll(),
             // new AdminerTablesHistory(),
             new FasterTablesFilter(),
+
+            // Sticky header and id column
+            new stickyColumns('id', '', true),
         );
 
         /* It is possible to combine customization and plugins:
