@@ -1,6 +1,6 @@
 .SILENT:
 .DEFAULT_GOAL := help
-ADMINEREVO_VERSION=4.8.4
+ADMINER_VERSION=4.16.0
 
 .PHONY: init
 init: install ## Init project
@@ -8,7 +8,7 @@ init: install ## Init project
 
 .PHONY: install
 install: ## Upgrade adminer to latest version
-	curl -L https://github.com/adminerevo/adminerevo/releases/download/v$(ADMINEREVO_VERSION)/adminer-$(ADMINEREVO_VERSION).php > adminer.php
+	curl -L https://github.com/vrana/adminer/releases/download/v$(ADMINER_VERSION)/adminer-$(ADMINER_VERSION).php > adminer.php
 
 .PHONY: help
 help: ## Show this help
