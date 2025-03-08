@@ -1,19 +1,24 @@
 <?php
 
-/** Log all queries to SQL file (manual queries through SQL command are not logged)
-* @link https://www.adminer.org/plugins/#use
-* @author Jakub Vrana, http://www.vrana.cz/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerSqlLog {
+namespace Adminer;
+
+/**
+ * Log all queries to SQL file (manual queries through SQL command are not logged)
+ *
+ * @link https://www.adminer.org/plugins/#use
+ * @author Jakub Vrana, http://www.vrana.cz/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class SqlLog
+{
 	/** @access protected */
 	var $filename;
 	var $folder;
 
 	/**
-	* @param string defaults to "$database.sql"
-	*/
+	 * @param string defaults to "$database.sql"
+	 */
 	function __construct($folder = "", $filename = "") {
 		$this->folder = $folder;
         $this->filename = $filename;
@@ -34,5 +39,4 @@ class AdminerSqlLog {
 		flock($fp, LOCK_UN);
 		fclose($fp);
 	}
-
 }

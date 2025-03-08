@@ -1,6 +1,9 @@
 <?php
 
-/** This plugin replaces UNIX timestamps with human-readable dates in your local format.
+namespace Adminer;
+
+/**
+ * Replaces UNIX timestamps with human-readable dates in your local format.
  * Mouse click on the date field reveals timestamp back.
  *
  * @link https://www.adminer.org/plugins/#use
@@ -8,7 +11,7 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
  */
-class AdminerReadableDates
+class ReadableDates
 {
     /** @access protected */
     var $prepend;

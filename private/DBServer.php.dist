@@ -1,12 +1,14 @@
 <?php
 
+namespace User;
+
 /**
 * List here all your private DB servers.
 *
 * Create a PHP file servers.php inside this directory with this content.
 * Adapt to add some of your local/remote DB servers like examples below
 */
-class DbServers
+class DBServer
 {
     public static $servers = array(
         'sqlite' => [

@@ -1,10 +1,10 @@
 .SILENT:
 .DEFAULT_GOAL := help
-ADMINER_VERSION=4.17.1
+ADMINER_VERSION=5.0.1
 
-.PHONY: init
-init: install ## Init project
-	cp private/servers.php.dist private/servers.php
+# .PHONY: init
+# init: install ## Init project
+# 	cp private/DBServer.php.dist private/DBServer.php
 
 .PHONY: install
 install: ## Upgrade adminer to latest version

@@ -5,85 +5,63 @@ declare(strict_types=1);
 if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')) {
     function adminer_object()
     {
-        // required to run any plugin
+        // Required to run any plugin
         include_once "./plugins/plugin.php";
 
-        // autoloader
+        // Autoloader
         foreach (glob("plugins/*.php") as $filename) {
             include_once "./$filename";
         }
 
-        // load custom DB servers
-        $servers = array('localhost');
-        if (file_exists("./private/servers.php")) {
-            include_once "./private/servers.php";
-            $servers = DBServers::$servers;
-        }
-
-        $plugins = array(
-            // new AdminerCheckboxSelect(),
-            // new AdminerDatabaseHide(),
-            // new AdminerDumpAlter(),
-            new AdminerDumpBz2(),
-            new AdminerDumpDate(),
-            new AdminerDumpJson(),
-            new AdminerDumpPhp(),
-            new AdminerDumpXml(),
-            new AdminerDumpZip(),
-            // new AdminerEditCalendar(),
-            new AdminerEditForeign(),
-            new AdminerEditTextarea(),
-            new AdminerEmailTable(),
-            new AdminerEnumOption(),
-            new AdminerFileUpload("data/"),
-            new AdminerForeignSystem(),
-            // new AdminerFrames(),
-            new AdminerJsonColumn(),
-            new AdminerLinksDirect(),
-            // new AdminerLoginServers(
-            //     $servers // get all your private servers list (see private/servers.php.dist)
-            // ),
-            new AdminerSelect2(),
-            new AdminerPerfectScrollbar(),
-            // new AdminerLoginTable(),
-            // new AdminerMasterSlave(),
-            new AdminerReadableDates(),
-            new AdminerSlugify(),
-            new AdminerSqlLog(
-                "sql" // folder where to store sql files
-            ),
-
-
+        $plugins = [
+            new Adminer\DumpBz2(),
+            new Adminer\DumpDate(),
+            new Adminer\DumpJson(),
+            new Adminer\DumpPhp(),
+            new Adminer\DumpXml(),
+            new Adminer\DumpZip(),
+            new Adminer\EditForeign(),
+            new Adminer\EditTextarea(),
+            new Adminer\EnumOption(),
+            new Adminer\ForeignSystem(),
+            new Adminer\JsonColumn(),
+            new Adminer\LinksDirect(),
+            new Adminer\PerfectScrollbar(),
+            new Adminer\ReadableDates(),
+            new Adminer\Slugify(),
+            new Adminer\SqlLog("sql"),
             // Some database system does not support password (ie. sqlite),
             // However, Adminer 4.6.3 and newer does not support accessing a database without a password.
             // See: https://www.adminer.org/en/password/
             // For this kind of system, login with credentials: root / fake
-            new AdminerLoginPasswordLess(
+            new Adminer\LoginPasswordLess(
                 password_hash("fake", PASSWORD_DEFAULT)
             ),
+            new Adminer\VersionNoverify(),
+            new Adminer\RestoreMenuScroll(),
+            new Adminer\FasterTablesFilter(),
+            new Adminer\StickyColumns('id', '', true),
 
-
+            // new Adminer\Select2(),
+            // new AdminerLoginTable(),
             // new AdminerTableStructure(),
-            // new AdminerTablesFilter(),
-            // new AdminerTinymce(),
-            // new AdminerTranslation(),
-            new AdminerVersionNoverify(),
-            // new AdminerWymeditor(),
-            new AdminerRestoreMenuScroll(),
             // new AdminerTablesHistory(),
-            new FasterTablesFilter(),
+        ];
 
-            // Sticky header and id column
-            new stickyColumns('id', '', true),
-        );
+        // Load custom DB servers
+        // $servers = ['localhost'];
+        // if (file_exists("./private/DBServer.php")) {
+        //     include_once "./private/DBServer.php";
+        //     $servers = User\DBServer::$servers;
+        //     array_push($plugins, new Adminer\LoginServers($servers));
+        // }
 
         /* It is possible to combine customization and plugins:
-        class AdminerCustomization extends AdminerPlugin {
-        }
+        class AdminerCustomization extends AdminerPlugin {}
         return new AdminerCustomization($plugins);
         */
 
-        return new AdminerPlugin($plugins);
+        return new Adminer\AdminerPlugin($plugins);
     }
 }
 

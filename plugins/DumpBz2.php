@@ -1,24 +1,31 @@
 <?php
 
-/** Dump to Bzip2 format
-* @link https://www.adminer.org/plugins/#use
-* @uses bzopen(), tempnam("")
-* @author Jakub Vrana, http://www.vrana.cz/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerDumpBz2 {
+namespace Adminer;
+
+/**
+ * Dump to Bzip2 format
+ *
+ * @link https://www.adminer.org/plugins/#use
+ * @uses bzopen(), tempnam("")
+ * @author Jakub Vrana, http://www.vrana.cz/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class DumpBz2
+{
 	/** @access protected */
 	var $filename, $fp;
-	
-	function dumpOutput() {
+
+    function dumpOutput()
+    {
 		if (!function_exists('bzopen')) {
 			return array();
 		}
 		return array('bz2' => 'bzip2');
 	}
-	
-	function _bz2($string, $state) {
+
+    function _bz2($string, $state)
+    {
 		bzwrite($this->fp, $string);
 		if ($state & PHP_OUTPUT_HANDLER_END) {
 			bzclose($this->fp);
@@ -28,8 +35,9 @@ class AdminerDumpBz2 {
 		}
 		return "";
 	}
-	
-	function dumpHeaders($identifier, $multi_table = false) {
+
+    function dumpHeaders($identifier, $multi_table = false)
+    {
 		if ($_POST["output"] == "bz2") {
 			$this->filename = tempnam("", "bz2");
 			$this->fp = bzopen($this->filename, 'w');
@@ -37,5 +45,4 @@ class AdminerDumpBz2 {
 			ob_start(array($this, '_bz2'), 1e6);
 		}
 	}
-
 }

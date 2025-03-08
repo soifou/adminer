@@ -1,6 +1,13 @@
 <?php
 
-class AdminerPerfectScrollbar
+namespace Adminer;
+
+/**
+ * Minimalistic but perfect custom scrollbar plugin
+ *
+ * @see https://perfectscrollbar.com/
+ */
+class PerfectScrollbar
 {
     function head() {
     ?>

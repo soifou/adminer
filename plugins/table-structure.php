@@ -1,5 +1,7 @@
 <?php
 
+namespace Adminer;
+
 /** Expanded table structure output
 * @see https://www.adminer.org/plugins/#use
 *

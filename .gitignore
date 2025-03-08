@@ -4,4 +4,6 @@ sql/
 !sql/.gitkeep
 
 private/*
-!private/servers.php.dist
+!private/DBServer.php.dist
+
+vendor

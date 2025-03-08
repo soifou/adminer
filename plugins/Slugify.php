@@ -1,19 +1,24 @@
 <?php
 
-/** Prefill field containing "_slug" with slugified value of a previous field (JavaScript)
-* @link https://www.adminer.org/plugins/#use
-* @author Jakub Vrana, http://www.vrana.cz/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerSlugify {
+namespace Adminer;
+
+/**
+ * Prefill field containing "_slug" with slugified value of a previous field (JavaScript)
+ *
+ * @link https://www.adminer.org/plugins/#use
+ * @author Jakub Vrana, http://www.vrana.cz/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class Slugify
+{
 	/** @access protected */
 	var $from, $to;
 
 	/**
-	* @param string find these characters ...
-	* @param string ... and replace them by these
-	*/
+	 * @param string find these characters ...
+	 * @param string ... and replace them by these
+	 */
 	function __construct($from = 'áčďéěíňóřšťúůýž', $to = 'acdeeinorstuuyz') {
 		$this->from = $from;
 		$this->to = $to;
@@ -38,5 +43,4 @@ class AdminerSlugify {
 			}
 		}
 	}
-
 }

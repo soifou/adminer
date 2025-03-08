@@ -1,30 +1,39 @@
 <?php
 
-/** Dump to JSON format
-* @link https://www.adminer.org/plugins/#use
-* @author Jakub Vrana, http://www.vrana.cz/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerDumpJson {
+namespace Adminer;
+
+/**
+ * Dump to JSON format
+ *
+ * @link https://www.adminer.org/plugins/#use
+ * @author Jakub Vrana, http://www.vrana.cz/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class DumpJson
+{
 	/** @access protected */
 	var $database = false;
-	
-	function dumpFormat() {
+
+    function dumpFormat()
+    {
 		return array('json' => 'JSON');
 	}
 
-	function dumpTable($table, $style, $is_view = false) {
+    function dumpTable($table, $style, $is_view = false)
+    {
 		if ($_POST["format"] == "json") {
 			return true;
 		}
 	}
-	
-	function _database() {
+
+    function _database()
+    {
 		echo "}\n";
 	}
-	
-	function dumpData($table, $style, $query) {
+
+    function dumpData($table, $style, $query)
+    {
 		if ($_POST["format"] == "json") {
 			if ($this->database) {
 				echo ",\n";
@@ -52,11 +61,11 @@ class AdminerDumpJson {
 		}
 	}
 
-	function dumpHeaders($identifier, $multi_table = false) {
+    function dumpHeaders($identifier, $multi_table = false)
+    {
 		if ($_POST["format"] == "json") {
 			header("Content-Type: application/json; charset=utf-8");
 			return "json";
 		}
 	}
-
 }

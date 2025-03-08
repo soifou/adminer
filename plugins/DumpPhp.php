@@ -1,26 +1,34 @@
 <?php
 
-/** Dump to PHP format
-* @author Martin Zeman (Zemistr), http://www.zemistr.eu/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerDumpPhp {
+namespace Adminer;
+
+/**
+ * Dump to PHP format
+ *
+ * @author Martin Zeman (Zemistr), http://www.zemistr.eu/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class DumpPhp
+{
 	var $output = array();
 	var $shutdown_callback = false;
 
-	function dumpFormat() {
+    function dumpFormat()
+    {
 		return array('php' => 'PHP');
 	}
 
-	function dumpHeaders() {
+    function dumpHeaders()
+    {
 		if ($_POST['format'] == 'php') {
 			header('Content-Type: text/plain; charset=utf-8');
 			return 'php';
 		}
 	}
 
-	function dumpTable($table) {
+    function dumpTable($table)
+    {
 		if ($_POST['format'] == 'php') {
 			$this->output[$table] = array();
 			if (!$this->shutdown_callback) {
@@ -31,7 +39,8 @@ class AdminerDumpPhp {
 		}
 	}
 
-	function dumpData($table, $style, $query) {
+    function dumpData($table, $style, $query)
+    {
 		if ($_POST['format'] == 'php') {
 			$connection = connection();
 			$result = $connection->query($query, 1);
@@ -44,7 +53,8 @@ class AdminerDumpPhp {
 		}
 	}
 
-	function _export() {
+    function _export()
+    {
 		echo "<?php\n";
 		var_export($this->output);
 	}

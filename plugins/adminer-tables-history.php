@@ -1,5 +1,7 @@
 <?php
 
+namespace Adminer;
+
 /**
 * Show the history of the latest selected tables. Cookies based.
 * Set the js variable history_length to define the history length.
@@ -78,5 +80,4 @@ class AdminerTablesHistory {
 <?php
 		return null;
 	}
-
 }

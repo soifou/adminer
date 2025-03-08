@@ -1,11 +1,16 @@
 <?php
-/** Remembers and restores scollbar position of side menu
-* @author Jiří @NoxArt Petruželka, www.noxart.cz
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerRestoreMenuScroll {
 
+namespace Adminer;
+
+/**
+ * Remembers and restores scollbar position of side menu
+ *
+ * @author Jiří @NoxArt Petruželka, www.noxart.cz
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class RestoreMenuScroll
+{
 	protected $script;
 
 	/**
@@ -22,5 +27,4 @@ window.addEventListener('unload', function(){\nlocalStorage.setItem('_adminerScr
 	{
 		echo $this->script;
 	}
-
 }

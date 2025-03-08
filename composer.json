@@ -1,0 +1,11 @@
+{
+  "name": "soifou/adminer",
+  "version": "1.0.0",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Adminer\\": "./plugins",
+      "User\\": "./private"
+    }
+  }
+}

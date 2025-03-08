@@ -1,16 +1,17 @@
 <?php
 
+namespace Adminer;
+
 /**
  * Make columns and header sticky
  * ==============================
- * Helps you when working with very large tables. Allows you to keept important columns always in sight.
+ * Helps you when working with very large tables. Allows you to keep important columns always in sight.
  *
- *
- * 2 ways to control this:
+ * Two ways to control this:
  * 1. You can define simple column names that will eighter stick to the left or to the right of the window. This approach will work if you have a lot of tables with the same structure.
  *
  * 		$plugins = array(
- *			new stickyColumns("ID","status") //in this example, column ID will stick to the left and column status will stick to the right.
+ *			new Adminer\StickyColumns("ID","status") //in this example, column ID will stick to the left and column status will stick to the right.
  * 		);
  *
  * 2. you can define sticky columns for each fully qualified table seperately:
@@ -21,7 +22,7 @@
  *						"mysql.proc"=>"created");
  *
  *		$plugins = array(
- *			new stickyColumns($stickyColumnsLeft,$stickyColumnsRight)
+ *			new Adminer\StickyColumns($stickyColumnsLeft,$stickyColumnsRight)
  *		);
  *
  * If you want to stick your header on top of the window, you can define that in the third parameter (bool).
@@ -32,16 +33,14 @@
  *
  * @author Stephan Herrmann, https://github.com/derStephan/AdminerPlugins
  * @license MIT
- *
  */
-class stickyColumns
+class StickyColumns
 {
 	private $stickyColumnLeft;
 	private $stickyColumnRight;
 	private $stickyHeader;
 
 	/**
-	 *
 	 * @param mixed $stickyColumnLeft if not empty, make this column sticky to the left border of the window. Give an array here to set this for multiple tables.
 	 * @param mixed $stickyColumnRight if not empty, make this column sticky to the right. Give an array here to set this for multiple tables.
 	 * @param bool $stickyHeader if true, make header sticky as well
@@ -118,12 +117,12 @@ class stickyColumns
 			//if a cell does not have any background, it will be shown as transparent
 			//to prevent this, set the background-color of the body for all transparent cells.
 			//this should work for all themes that do not have a background-image.
-			var bodyBackground=getComputedStyle(document.body).backgroundColor;
-			for (let cell of document.querySelectorAll("#table tbody td" ) )
-			{
-				if(getComputedStyle(cell).backgroundColor=="rgba(0, 0, 0, 0)")
-					cell.style.backgroundColor=bodyBackground;
-			}
+			//var bodyBackground=getComputedStyle(document.body).backgroundColor;
+			//for (let cell of document.querySelectorAll("#table tbody td" ) )
+			//{
+			//	if(getComputedStyle(cell).backgroundColor=="rgba(0, 0, 0, 0)")
+			//		cell.style.backgroundColor=bodyBackground;
+			//}
 		}
 		document.addEventListener('DOMContentLoaded', makeColumnHeadersSticky);
 		</script>

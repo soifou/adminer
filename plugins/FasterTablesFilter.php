@@ -1,5 +1,7 @@
 <?php
 
+namespace Adminer;
+
 /**
  * Faster tables filter plugin
  * ===========================

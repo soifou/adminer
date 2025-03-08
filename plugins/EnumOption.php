@@ -1,14 +1,19 @@
 <?php
 
-/** Use <select><option> for enum edit instead of <input type="radio">
-* @link https://www.adminer.org/plugins/#use
-* @author Jakub Vrana, http://www.vrana.cz/
-* @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
-*/
-class AdminerEnumOption {
-	
-	function editInput($table, $field, $attrs, $value) {
+namespace Adminer;
+
+/**
+ * Use `select>option` for enum edit instead of `input type="radio"`
+ *
+ * @link https://www.adminer.org/plugins/#use
+ * @author Jakub Vrana, http://www.vrana.cz/
+ * @license http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+ */
+class EnumOption
+{
+    function editInput($table, $field, $attrs, $value)
+    {
 		if ($field["type"] == "enum") {
 			$options = array("" => array());
 			$selected = $value;
@@ -33,5 +38,4 @@ class AdminerEnumOption {
 			return "<select$attrs>" . optionlist($options, (string) $selected, 1) . "</select>"; // 1 - use keys
 		}
 	}
-	
 }
