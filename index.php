@@ -37,7 +37,6 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')) {
             new Adminer\LoginPasswordLess(
                 password_hash("fake", PASSWORD_DEFAULT)
             ),
-            new Adminer\VersionNoverify(),
             new Adminer\RestoreMenuScroll(),
             new Adminer\FasterTablesFilter(),
             new Adminer\StickyColumns('id', '', true),

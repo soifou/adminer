@@ -1,6 +1,6 @@
 .SILENT:
 .DEFAULT_GOAL := help
-ADMINER_VERSION=5.0.1
+ADMINER_VERSION=5.0.5
 
 # .PHONY: init
 # init: install ## Init project
