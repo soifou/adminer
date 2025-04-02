@@ -39,7 +39,6 @@ if(is_dir(dirname(__FILE__).DIRECTORY_SEPARATOR.'plugins')) {
             ),
             new Adminer\RestoreMenuScroll(),
             new Adminer\FasterTablesFilter(),
-            new Adminer\StickyColumns('id', '', true),
 
             // new Adminer\Select2(),
             // new AdminerLoginTable(),
